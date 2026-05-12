@@ -43,7 +43,7 @@ public class HlavniOkno extends JFrame {
 
         addBtn.addActionListener(e -> new KnizniForma(this,spravce,null));
         deleteBtn.addActionListener(e -> deleteBook());
-        detailBtn.addActionListener(e -> serchBooks());
+        detailBtn.addActionListener(e -> showDetail());
 
         spodniPanel.add(addBtn);
         spodniPanel.add(deleteBtn);
@@ -79,7 +79,7 @@ public class HlavniOkno extends JFrame {
     private void showDetail() {
         Kniha selected = bookList.getSelectedValue();
         if (selected != null) {
-            new BookDetail(this, selected);
+            new DetailKnihy (this, selected);
         }
     }
 
