@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.print.Book;
 
 public class HlavniOkno extends JFrame {
     private SpravceKnihovny spravce;
@@ -40,6 +41,10 @@ public class HlavniOkno extends JFrame {
         JButton deleteBtn = new JButton("Smazat");
         JButton detailBtn = new JButton("Detail");
 
+        addBtn.addActionListener(e -> new BookForm(this,spravce,null));
+        deleteBtn.addActionListener(e -> deleteBook());
+        detailBtn.addActionListener(e -> serchBooks());
+
         spodniPanel.add(addBtn);
         spodniPanel.add(deleteBtn);
         spodniPanel.add(detailBtn);
@@ -68,6 +73,12 @@ public class HlavniOkno extends JFrame {
         if(selected != null){
             spravce.odeberKnihu(selected);
             refreshList();
+        }
+    }
+    private void showDetail() {
+        Kniha selected = bookList.getSelectedValue();
+        if (selected != null) {
+            new BookDetail(this, selected);
         }
     }
 
