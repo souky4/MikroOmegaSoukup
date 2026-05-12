@@ -5,7 +5,7 @@ public class Kniha {
     private String zanr;
     private boolean dostupnost;
 
-    public Kniha(String nazev, String autor, int rok, String zanr, boolean dostupnost) {
+    public Kniha(String nazev, String autor, int rok, String zanr) {
         this.nazev = nazev;
         this.autor = autor;
         this.rok = rok;

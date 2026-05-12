@@ -41,7 +41,7 @@ public class HlavniOkno extends JFrame {
         JButton deleteBtn = new JButton("Smazat");
         JButton detailBtn = new JButton("Detail");
 
-        addBtn.addActionListener(e -> new BookForm(this,spravce,null));
+        addBtn.addActionListener(e -> new KnizniForma(this,spravce,null));
         deleteBtn.addActionListener(e -> deleteBook());
         detailBtn.addActionListener(e -> serchBooks());
 
@@ -75,6 +75,7 @@ public class HlavniOkno extends JFrame {
             refreshList();
         }
     }
+
     private void showDetail() {
         Kniha selected = bookList.getSelectedValue();
         if (selected != null) {
